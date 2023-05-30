@@ -1,124 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
-    <title>Frontend Mentor | Intro component with sign up form</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+		<title>Frontend Mentor | Intro component with sign up form</title>
 
-    <!-- DEPENDENCIES -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.min.css"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-    ></script>
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/attributify.global.js"></script>
-  </head>
+		<!-- DEPENDENCIES -->
+		<script
+			defer
+			src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+		></script>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.min.css"
+		/>
+		<script src="script.js"></script>
+		<link rel="stylesheet" href="styles.css" />
+		<script src="https://cdn.jsdelivr.net/npm/@unocss/runtime/attributify.global.js"></script>
+	</head>
 
-  <body
-    class="font-poppins text-white text-red -tracking-0.08 leading-6.5"
-    un-cloak
-  >
-    <section
-      class="m-auto flex flex-col py-22.75 px-6 bg-primary-red bg-[url(images/bg-intro-mobile.png)]"
-      md="flex-row items-center"
-    >
-      <!-- TITLE -->
-      <div class="flex-1">
-        <div
-          class="text-center w-full max-w-130 m-auto"
-          md="mt-1 text-left ml-auto mt-9 mr-9"
-        >
-          <h1
-            class="text-7 leading-9 font-700"
-            md="text-12.5 leading-13.5 -tracking-0.15"
-          >
-            Learn to code by watching others
-          </h1>
-          <p class="mt-5.5 tracking-0 font-500" md="mt-7">
-            See how experienced developers solve problems in real-time. Watching
-            scripted tutorials is great, but understanding how developers think
-            is invaluable.
-          </p>
-        </div>
-      </div>
+	<body
+		class="font-poppins text-white text-red -tracking-0.08 leading-6.5"
+		un-cloak
+	>
+		<section
+			class="m-auto flex flex-col py-22.75 px-6 bg-primary-red bg-[url(images/bg-intro-mobile.png)]"
+			md="flex-row items-center"
+		>
+			<!-- TITLE -->
+			<div class="flex-1">
+				<div
+					class="text-center w-full max-w-130 m-auto"
+					md="mt-1 text-left ml-auto mt-9 mr-9"
+				>
+					<h1
+						class="text-7 leading-9 font-700"
+						md="text-12.5 leading-13.5 -tracking-0.15"
+					>
+						Learn to code by watching others
+					</h1>
+					<p class="mt-5.5 tracking-0 font-500" md="mt-7">
+						See how experienced developers solve problems in
+						real-time. Watching scripted tutorials is great, but
+						understanding how developers think is invaluable.
+					</p>
+				</div>
+			</div>
 
-      <!-- FORM -->
-      <div class="flex-1">
-        <div class="mx-auto mt-15.75 max-w-135" md="mt-7.5 ml-3.5">
-          <!-- INFO BAR -->
-          <div
-            class="px-12 py-4.5 rounded-2.5 text-center bg-accent-blue leading-6.5 shadow-out"
-            md="py-4.25"
-          >
-            <b>Try it free 7 days</b> then $20/mo. thereafter
-          </div>
+			<!-- FORM -->
+			<div class="flex-1">
+				<div class="mx-auto mt-15.75 max-w-135" md="mt-7.5 ml-3.5">
+					<!-- INFO BAR -->
+					<div
+						class="px-12 py-4.5 rounded-2.5 text-center bg-accent-blue leading-6.5 shadow-out"
+						md="py-4.25"
+					>
+						<b>Try it free 7 days</b> then $20/mo. thereafter
+					</div>
 
-          <!-- SIGNUP -->
-          <form
-            action=""
-            class="mt-6 p-6 bg-white flex flex-col gap-3.75 rounded-2.5 shadow-out"
-            md="p-10 gap-4.75 pb-10.5"
-          >
-            <label for="firstName" class="sr-only">First Name</label>
-            <input
-              type="text"
-              name=""
-              placeholder="First Name"
-              id="firstName"
-              class="input"
-            />
-            <label for="lastName" class="sr-only" class="input"
-              >Last Name</label
-            >
-            <input
-              type="text"
-              name=""
-              placeholder="Last Name"
-              id="lastName"
-              class="input"
-            />
-            <label for="email" class="sr-only">Email Address</label>
-            <input
-              type="text"
-              name=""
-              placeholder="Email Address"
-              id="email"
-              class="input"
-            />
-            <label for="password" class="sr-only">Password</label>
-            <input
-              type="password"
-              name=""
-              placeholder="Password"
-              id="password"
-              class="input"
-            />
-            <button
-              class="text-3.5 font-600 tracking-0.35 bg-primary-green rounded-1.5 mt-0.25 py-3.75 shadow-in"
-            >
-              CLAIM YOUR FREE TRIAL
-            </button>
-            <p
-              class="mx-5 -mt-1 tracking-0.01 text-2.75 leading-5 font-500 text-center text-neutral-gray"
-              md="-mt-1.5"
-            >
-              By clicking the button, you are agreeing to our
-              <b class="text-primary-red">Terms and Services</b>
-            </p>
-          </form>
-        </div>
-      </div>
-    </section>
-  </body>
+					<!-- SIGNUP -->
+					<form
+						action=""
+						class="mt-6 p-6 bg-white flex flex-col gap-3.75 rounded-2.5 shadow-out"
+						md="p-10 gap-4.75 pb-10.5"
+					>
+						<label for="firstName" class="sr-only"
+							>First Name</label
+						>
+						<input
+							type="text"
+							name=""
+							placeholder="First Name"
+							id="firstName"
+							class="input"
+						/>
+						<label for="lastName" class="sr-only" class="input"
+							>Last Name</label
+						>
+						<input
+							type="text"
+							name=""
+							placeholder="Last Name"
+							id="lastName"
+							class="input"
+						/>
+						<label for="email" class="sr-only">Email Address</label>
+						<input
+							type="text"
+							name=""
+							placeholder="Email Address"
+							id="email"
+							class="input"
+						/>
+						<label for="password" class="sr-only">Password</label>
+						<input
+							type="password"
+							name=""
+							placeholder="Password"
+							id="password"
+							class="input"
+						/>
+						<button
+							class="text-3.5 font-600 tracking-0.35 bg-primary-green rounded-1.5 mt-0.25 py-3.75 shadow-in"
+						>
+							CLAIM YOUR FREE TRIAL
+						</button>
+						<p
+							class="mx-5 -mt-1 tracking-0.01 text-2.75 leading-5 font-500 text-center text-neutral-gray"
+							md="-mt-1.5"
+						>
+							By clicking the button, you are agreeing to our
+							<b class="text-primary-red">Terms and Services</b>
+						</p>
+					</form>
+				</div>
+			</div>
+		</section>
+	</body>
 </html>
