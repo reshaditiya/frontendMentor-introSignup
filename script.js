@@ -14,7 +14,7 @@ window.__unocss = {
   },
   shortcuts: {
     input:
-      "border-1.5 border-black w-full px-4.5 py-3.5 text-3.5 tracking-0.1 font-500 border-neutral-gray placeholder-neutral-gray text-neutral-dark rounded-1.5",
+      "border-1.5 border-black w-full px-4.5 py-3.5 text-3.5 tracking-0.1 font-500 border-neutral-gray placeholder-neutral-gray text-neutral-dark rounded-1.5 md:px-7.5",
     "shadow-out": "shadow-[0rem_0.5rem_rgba(62,60,73,0.2)]",
     "shadow-in": "shadow-[inset_0rem_-0.25rem_rgba(62,60,73,0.2)]",
   },
