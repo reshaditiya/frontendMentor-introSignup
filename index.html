@@ -31,7 +31,7 @@
 	>
 		<section
 			class="m-auto min-h-250 flex flex-col pt-22.75 pb-15 px-6 bg-primary-red bg-[url(images/bg-intro-mobile.png)]"
-			md="flex-row items-center min-h-200 pt-15"
+			md="flex-row items-center min-h-200 pt-15 bg-[url(images/bg-intro-desktop.png)]"
 		>
 			<!-- TITLE -->
 			<div md="flex-1">
@@ -69,45 +69,144 @@
 						action=""
 						class="mt-6 p-6 bg-white flex flex-col gap-4 rounded-2.5 shadow-out"
 						md="p-10 gap-4.75 pb-10"
+						x-data="signupform"
 					>
 						<label for="firstName" class="sr-only"
 							>First Name</label
 						>
-						<input
-							type="text"
-							name=""
-							placeholder="First Name"
-							id="firstName"
-							class="input"
-						/>
+						<div class="relative">
+							<input
+								type="text"
+								name=""
+								placeholder="First Name"
+								id="firstName"
+								class="input"
+								maxlength="20"
+								x-model="firstName"
+							/>
+							<div x-show="isSubmitted && firstName === ''">
+								<div class="input-icon">
+									<img src="images/icon-error.svg" alt="" />
+								</div>
+								<p class="warning-label">
+									First Name cannot be empty
+								</p>
+							</div>
+						</div>
+
 						<label for="lastName" class="sr-only" class="input"
 							>Last Name</label
 						>
-						<input
-							type="text"
-							name=""
-							placeholder="Last Name"
-							id="lastName"
-							class="input"
-						/>
+						<div class="relative">
+							<input
+								type="text"
+								name=""
+								placeholder="Last Name"
+								id="lastName"
+								class="input"
+								maxlength="20"
+								x-model="lastName"
+							/>
+							<div x-show="isSubmitted && lastName === ''">
+								<div class="input-icon">
+									<img src="images/icon-error.svg" alt="" />
+								</div>
+								<p class="warning-label">
+									Last Name cannot be empty
+								</p>
+							</div>
+						</div>
+
 						<label for="email" class="sr-only">Email Address</label>
-						<input
-							type="text"
-							name=""
-							placeholder="Email Address"
-							id="email"
-							class="input"
-						/>
-						<label for="password" class="sr-only">Password</label>
-						<input
-							type="password"
-							name=""
-							placeholder="Password"
-							id="password"
-							class="input"
-						/>
+						<div class="relative">
+							<input
+								type="text"
+								name=""
+								placeholder="Email Address"
+								id="email"
+								class="input"
+								maxlength="20"
+								x-model="email"
+							/>
+							<div
+								x-show="isSubmitted && (email === '' || !isValidEmail())"
+							>
+								<div class="input-icon">
+									<img src="images/icon-error.svg" alt="" />
+								</div>
+								<p
+									class="warning-label"
+									x-text="!isValidEmail() && email !== '' ? 'Looks like this is not an email' : 'Email cannot be empty'"
+								></p>
+							</div>
+						</div>
+
+						<div class="relative" x-data="{isShowPassword: false}">
+							<label for="password" class="sr-only"
+								>Password</label
+							>
+							<input
+								:type="isShowPassword ? 'text' : 'password'"
+								name=""
+								placeholder="Password"
+								id="password"
+								class="input"
+								maxlength="20"
+								x-model="password"
+							/>
+							<div x-show="isSubmitted && password === ''">
+								<div class="input-icon">
+									<img src="images/icon-error.svg" alt="" />
+								</div>
+								<p class="warning-label">
+									Password cannot be empty
+								</p>
+							</div>
+							<div
+								x-show="!(isSubmitted && password === '')"
+								class="input-icon top-4.5 cursor-pointer"
+								@click="isShowPassword = !isShowPassword"
+								@keyup.enter="isShowPassword = !isShowPassword"
+								tabindex="0"
+							>
+								<!-- EYE ICON -->
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 20 20"
+									fill="currentColor"
+									class="w-5 h-5 fill-neutral-gray"
+								>
+									<!-- OPEN EYES ICON -->
+									<path
+										x-show="isShowPassword"
+										d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"
+									/>
+									<path
+										x-show="isShowPassword"
+										fill-rule="evenodd"
+										d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+										clip-rule="evenodd"
+									/>
+									<!-- CLOSED EYES ICON -->
+									<path
+										x-show="!isShowPassword"
+										fill-rule="evenodd"
+										d="M3.28 2.22a.75.75 0 00-1.06 1.06l14.5 14.5a.75.75 0 101.06-1.06l-1.745-1.745a10.029 10.029 0 003.3-4.38 1.651 1.651 0 000-1.185A10.004 10.004 0 009.999 3a9.956 9.956 0 00-4.744 1.194L3.28 2.22zM7.752 6.69l1.092 1.092a2.5 2.5 0 013.374 3.373l1.091 1.092a4 4 0 00-5.557-5.557z"
+										clip-rule="evenodd"
+									/>
+									<path
+										x-show="!isShowPassword"
+										d="M10.748 13.93l2.523 2.523a9.987 9.987 0 01-3.27.547c-4.258 0-7.894-2.66-9.337-6.41a1.651 1.651 0 010-1.186A10.007 10.007 0 012.839 6.02L6.07 9.252a4 4 0 004.678 4.678z"
+									/>
+								</svg>
+							</div>
+						</div>
+
 						<button
 							class="text-3.5 font-600 tracking-0.35 bg-primary-green rounded-1.5 mt-0.25 py-3.75 shadow-in"
+							hover="opacity-80"
+							active="opacity-60"
+							@click.prevent="submit"
 						>
 							CLAIM YOUR FREE TRIAL
 						</button>
@@ -116,7 +215,11 @@
 							md="-mt-1.5"
 						>
 							By clicking the button, you are agreeing to our
-							<a class="font-700 text-primary-red cursor-pointer" tabindex="0">Terms and Services</a>
+							<a
+								class="font-700 text-primary-red cursor-pointer"
+								tabindex="0"
+								>Terms and Services</a
+							>
 						</p>
 					</form>
 				</div>
